@@ -41,6 +41,7 @@ export const dictionary = {
       title: "Tools I reach for",
       chartTitle: "Skill focus by area",
       certsTitle: "Certifications",
+      certsMoreLabel: "more on LinkedIn",
     },
     projects: {
       kicker: "Projects",
@@ -107,6 +108,7 @@ export const dictionary = {
       title: "Herramientas que uso",
       chartTitle: "Enfoque de habilidades por área",
       certsTitle: "Certificaciones",
+      certsMoreLabel: "más en LinkedIn",
     },
     projects: {
       kicker: "Proyectos",

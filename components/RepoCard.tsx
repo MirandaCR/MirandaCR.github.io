@@ -6,7 +6,7 @@ export default function RepoCard({ repo }: { repo: GithubRepo }) {
       href={repo.html_url}
       target="_blank"
       rel="noopener noreferrer"
-      className="block rounded-2xl bg-surface border border-foreground/10 p-6 hover:border-accent-cyan/50 transition-colors"
+      className="block rounded-2xl bg-surface border border-foreground/10 p-6 transition-all duration-200 hover:border-accent-cyan/50 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/20"
     >
       <h3 className="font-semibold text-foreground-bright mb-2 truncate">
         {repo.name}

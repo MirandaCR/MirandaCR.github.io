@@ -8,6 +8,7 @@ const chartColor: Record<string, string> = {
   purple: "var(--color-chart-purple)",
   blue: "var(--color-chart-blue)",
   orange: "var(--color-chart-orange)",
+  cyan: "var(--color-chart-cyan)",
 };
 
 export default function SkillsChart() {

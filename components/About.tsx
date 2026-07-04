@@ -7,7 +7,7 @@ export default function About() {
   const { t } = useLanguage();
 
   return (
-    <section id="about" className="max-w-4xl mx-auto px-6 py-20">
+    <section id="about" className="max-w-4xl mx-auto px-6 py-16">
       <SectionTag>{t("about.kicker")}</SectionTag>
       <h2 className="text-2xl md:text-3xl font-semibold text-foreground-bright mb-6">
         {t("about.title")}

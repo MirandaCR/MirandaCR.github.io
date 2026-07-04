@@ -1,7 +1,7 @@
 export interface SkillGroup {
   id: string;
   label: { en: string; es: string };
-  accent: "green" | "purple" | "blue" | "orange";
+  accent: "green" | "purple" | "blue" | "orange" | "cyan";
   items: string[];
 }
 
@@ -17,6 +17,7 @@ export const skillGroups: SkillGroup[] = [
       "Seaborn",
       "Prompt Engineering",
       "Generative AI / LLMs",
+      "n8n (AI agents)",
     ],
   },
   {
@@ -32,40 +33,82 @@ export const skillGroups: SkillGroup[] = [
     items: [
       "SQL (MySQL, PostgreSQL, Oracle, MSSQL)",
       "Power BI",
+      "Tableau",
       "Azure",
+      "Microsoft Fabric",
       "Apache Hive",
+    ],
+  },
+  {
+    id: "trading",
+    label: { en: "Trading & Quant", es: "Trading & Quant" },
+    accent: "orange",
+    items: [
+      "Trading Strategies",
+      "Trading Systems",
+      "Quantitative Finance",
+      "Technical Analysis",
     ],
   },
   {
     id: "other",
     label: { en: "Other", es: "Otros" },
-    accent: "orange",
-    items: ["Gamification"],
+    accent: "cyan",
+    items: ["Gamification", "Lean Portfolio Management"],
   },
 ];
 
-export interface Certification {
-  title: { en: string; es: string };
+export interface FeaturedCertification {
+  title: string;
+  issuer: string;
+  date: string;
 }
 
-export const certifications: Certification[] = [
+// Featured subset of ~40 real LinkedIn certifications — picked for relevance
+// to AI/GenAI, trading, data viz and banking-adjacent audiences. Full list
+// linked out to LinkedIn rather than dumped here (see siteConfig.linkedinCertificationsUrl).
+export const featuredCertifications: FeaturedCertification[] = [
+  { title: "Trading con IA Generativa", issuer: "Udemy", date: "Nov 2025" },
   {
-    title: {
-      en: "LÍNEA 2024 — High Specialty Certificate: Artificial Intelligence & Machine Learning",
-      es: "LÍNEA 2024 — Certificado de Alta Especialidad: Inteligencia Artificial y Aprendizaje Automático",
-    },
+    title: "Trading Cuantitativo en Python: Ingeniería Financiera e IA",
+    issuer: "Udemy",
+    date: "Jan 2025",
   },
   {
-    title: {
-      en: "Exploratory Data Analysis & Statistical Report Automation",
-      es: "Análisis Exploratorio de Datos y Automatización de Reportes Estadísticos",
-    },
+    title: "AI & Quantum Computing Mastery",
+    issuer: "Udemy",
+    date: "Jun 2026",
   },
-  { title: { en: "Unsupervised Learning in R", es: "Unsupervised Learning in R" } },
   {
-    title: {
-      en: "Working with Categorical Data in Python",
-      es: "Working with Categorical Data in Python",
-    },
+    title: "ChatGPT Prompt Engineering for Developers",
+    issuer: "DeepLearning.AI",
+    date: "Jan 2025",
+  },
+  {
+    title: "Agentes de IA Avanzados: MCP, WhatsApp, Voz",
+    issuer: "Udemy (n8n)",
+    date: "Jul 2025",
+  },
+  {
+    title: "LÍNEA 2024 — Alta Especialidad: Visualización de Datos",
+    issuer: "Tecnológico de Monterrey",
+    date: "Jan 2024",
+  },
+  {
+    title: "LÍNEA 2024 — Alta Especialidad: Ciencia de Datos",
+    issuer: "Tecnológico de Monterrey",
+    date: "Jan 2024",
+  },
+  {
+    title: "Certified SAFe® 6 Lean Portfolio Manager",
+    issuer: "Scaled Agile",
+    date: "May 2024",
+  },
+  {
+    title: "Microsoft Certified: Azure Fundamentals",
+    issuer: "Microsoft",
+    date: "Mar 2023",
   },
 ];
+
+export const totalCertificationsCount = 41;

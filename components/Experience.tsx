@@ -11,7 +11,7 @@ export default function Experience() {
   const [view, setView] = useState<"chart" | "list">("chart");
 
   return (
-    <section id="experience" className="max-w-4xl mx-auto px-6 py-20">
+    <section id="experience" className="max-w-4xl mx-auto px-6 py-16">
       <div className="flex flex-wrap items-baseline justify-between gap-4 mb-10">
         <div>
           <SectionTag>{t("experience.kicker")}</SectionTag>
