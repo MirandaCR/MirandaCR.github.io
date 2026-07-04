@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+/*
+ * Palenight-inspired palette (Material Palenight VS Code theme).
+ * Dark mode only — no light theme toggle for this site.
+ * Accent role mapping (keep consistent across components):
+ *   purple  -> primary CTAs, active/toggle state
+ *   cyan    -> links, hover underline
+ *   blue    -> section kickers/labels
+ *   green   -> success/loaded states, data-related tags
+ *   orange  -> trading/quant-related tags, secondary accents
+ *   pink    -> sparing use only: error states, single hover emphasis
+ */
+@theme {
+  --color-background: #292d3e;
+  --color-surface: #34324a;
+  --color-surface-alt: #3b394c;
+  --color-foreground: #a6accd;
+  --color-foreground-bright: #eeffff;
+  --color-accent-purple: #c792ea;
+  --color-accent-cyan: #89ddff;
+  --color-accent-blue: #82aaff;
+  --color-accent-green: #c3e88d;
+  --color-accent-orange: #f78c6c;
+  --color-accent-pink: #ff5370;
+
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains-mono);
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+}
