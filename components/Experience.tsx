@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { Briefcase } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import SectionTag from "@/components/SectionTag";
 import ExperienceTimeline from "@/components/ExperienceTimeline";
@@ -14,7 +15,7 @@ export default function Experience() {
     <section id="experience" className="max-w-4xl mx-auto px-6 py-16">
       <div className="flex flex-wrap items-baseline justify-between gap-4 mb-10">
         <div>
-          <SectionTag>{t("experience.kicker")}</SectionTag>
+          <SectionTag icon={Briefcase}>{t("experience.kicker")}</SectionTag>
           <h2 className="text-2xl md:text-3xl font-semibold text-foreground-bright">
             {t("experience.title")}
           </h2>

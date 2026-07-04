@@ -2,6 +2,7 @@ export interface SkillGroup {
   id: string;
   label: { en: string; es: string };
   accent: "green" | "purple" | "blue" | "orange" | "cyan";
+  icon: "brain-circuit" | "atom" | "database" | "trending-up" | "gamepad";
   items: string[];
 }
 
@@ -10,6 +11,7 @@ export const skillGroups: SkillGroup[] = [
     id: "ai-ml",
     label: { en: "AI / ML", es: "IA / ML" },
     accent: "green",
+    icon: "brain-circuit",
     items: [
       "Python",
       "Pandas",
@@ -24,12 +26,14 @@ export const skillGroups: SkillGroup[] = [
     id: "quantum",
     label: { en: "Quantum", es: "Quantum" },
     accent: "purple",
+    icon: "atom",
     items: ["Qiskit", "Quantum Computing"],
   },
   {
     id: "data-bi",
     label: { en: "Data / BI", es: "Data / BI" },
     accent: "blue",
+    icon: "database",
     items: [
       "SQL (MySQL, PostgreSQL, Oracle, MSSQL)",
       "Power BI",
@@ -43,6 +47,7 @@ export const skillGroups: SkillGroup[] = [
     id: "trading",
     label: { en: "Trading & Quant", es: "Trading & Quant" },
     accent: "orange",
+    icon: "trending-up",
     items: [
       "Trading Strategies",
       "Trading Systems",
@@ -54,6 +59,7 @@ export const skillGroups: SkillGroup[] = [
     id: "other",
     label: { en: "Other", es: "Otros" },
     accent: "cyan",
+    icon: "gamepad",
     items: ["Gamification", "Lean Portfolio Management"],
   },
 ];

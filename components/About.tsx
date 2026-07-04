@@ -1,5 +1,6 @@
 "use client";
 
+import { Sparkles } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import SectionTag from "@/components/SectionTag";
 
@@ -8,7 +9,7 @@ export default function About() {
 
   return (
     <section id="about" className="max-w-4xl mx-auto px-6 py-16">
-      <SectionTag>{t("about.kicker")}</SectionTag>
+      <SectionTag icon={Sparkles}>{t("about.kicker")}</SectionTag>
       <h2 className="text-2xl md:text-3xl font-semibold text-foreground-bright mb-6">
         {t("about.title")}
       </h2>

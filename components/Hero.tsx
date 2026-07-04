@@ -7,8 +7,20 @@ export default function Hero() {
   const { t } = useLanguage();
 
   return (
-    <section id="top" className="max-w-4xl mx-auto px-6 pt-20 pb-16">
-      <div className="flex flex-col-reverse md:flex-row md:items-center gap-10 md:gap-14">
+    <section
+      id="top"
+      className="relative overflow-hidden max-w-4xl mx-auto px-6 pt-20 pb-16"
+    >
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -top-24 -right-24 h-72 w-72 rounded-full bg-accent-purple/25 blur-3xl"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute top-40 -left-24 h-64 w-64 rounded-full bg-accent-cyan/20 blur-3xl"
+      />
+
+      <div className="relative flex flex-col-reverse md:flex-row md:items-center gap-10 md:gap-14">
         <div className="flex-1 min-w-0">
           <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent-purple mb-4">
             ~/{t("nav.brand")}
@@ -40,7 +52,7 @@ export default function Hero() {
         </div>
 
         <div className="shrink-0 mx-auto md:mx-0">
-          <div className="relative w-40 sm:w-48 md:w-56 aspect-[4/5] rounded-2xl overflow-hidden ring-2 ring-accent-purple/40">
+          <div className="relative w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 rounded-full overflow-hidden ring-4 ring-accent-purple/40 shadow-[0_0_40px_-8px_rgba(199,146,234,0.5)]">
             <Image
               src="/cristian.jpg"
               alt="Cristian Miranda"

@@ -9,6 +9,8 @@ export interface GithubRepo {
   fork: boolean;
 }
 
+const MAX_REPOS = 6;
+
 export async function fetchGithubRepos(username: string): Promise<GithubRepo[]> {
   const res = await fetch(
     `https://api.github.com/users/${username}/repos?sort=updated&per_page=12`
@@ -17,5 +19,5 @@ export async function fetchGithubRepos(username: string): Promise<GithubRepo[]> 
     throw new Error(`GitHub API error: ${res.status}`);
   }
   const repos: GithubRepo[] = await res.json();
-  return repos.filter((repo) => !repo.fork);
+  return repos.filter((repo) => !repo.fork).slice(0, MAX_REPOS);
 }

@@ -141,21 +141,6 @@ export const experience: ExperienceItem[] = [
     highlights: { en: [], es: [] },
     collapsedByDefault: true,
   },
-  {
-    id: "produbanco",
-    company: "PRODUBANCO – Grupo Promerica",
-    role: "Intern",
-    location: "Quito, Ecuador",
-    category: "banking",
-    start: "2018-11",
-    end: "2018-12",
-    period: { en: "Nov 2018 – Dec 2018", es: "Nov 2018 – Dic 2018" },
-    highlights: {
-      en: ["Data analysis and processing."],
-      es: ["Análisis y procesamiento de datos."],
-    },
-    collapsedByDefault: true,
-  },
 ];
 
 export const experienceCategoryMeta: Record<

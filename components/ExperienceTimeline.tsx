@@ -54,7 +54,7 @@ export default function ExperienceTimeline() {
   const categories = Object.keys(experienceCategoryMeta) as ExperienceCategory[];
 
   return (
-    <div>
+    <div className="rounded-2xl bg-surface/60 border border-foreground/10 p-5">
       <div className="flex flex-wrap gap-x-6 gap-y-2 mb-8 font-mono text-xs">
         {categories.map((cat) => (
           <span key={cat} className="flex items-center gap-2 text-foreground/70">
@@ -79,7 +79,7 @@ export default function ExperienceTimeline() {
         ))}
       </div>
 
-      <div className="space-y-1.5">
+      <div className="space-y-2">
         {rows.map(({ item, leftPct, widthPct }) => {
           const meta = experienceCategoryMeta[item.category];
           const isActive = active === item.id;
@@ -91,7 +91,7 @@ export default function ExperienceTimeline() {
               >
                 {item.company}
               </div>
-              <div className="relative flex-1 h-6">
+              <div className="relative flex-1 h-6 rounded-full bg-chart-grid/40">
                 {yearTicks.map((t) => (
                   <div
                     key={t.year}
@@ -106,7 +106,7 @@ export default function ExperienceTimeline() {
                   onFocus={() => setActive(item.id)}
                   onBlur={() => setActive((v) => (v === item.id ? null : v))}
                   aria-label={`${item.company}: ${item.role}, ${item.period[lang]}`}
-                  className="absolute h-4 top-1 rounded-full transition-[filter] outline-none focus-visible:ring-2 focus-visible:ring-accent-cyan"
+                  className="absolute h-5 top-0.5 rounded-full transition-[filter] outline-none focus-visible:ring-2 focus-visible:ring-accent-cyan"
                   style={{
                     left: `${leftPct}%`,
                     width: `${widthPct}%`,

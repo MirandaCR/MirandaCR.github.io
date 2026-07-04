@@ -7,6 +7,7 @@ import { siteConfig } from "@/data/siteConfig";
 import SectionTag from "@/components/SectionTag";
 import RepoCard from "@/components/RepoCard";
 import LanguageChart from "@/components/LanguageChart";
+import { GithubIcon } from "@/components/icons";
 
 type Status = "loading" | "error" | "success";
 
@@ -34,7 +35,7 @@ export default function GithubProjects() {
 
   return (
     <section id="projects" className="max-w-4xl mx-auto px-6 py-16">
-      <SectionTag>{t("projects.kicker")}</SectionTag>
+      <SectionTag icon={GithubIcon}>{t("projects.kicker")}</SectionTag>
       <h2 className="text-2xl md:text-3xl font-semibold text-foreground-bright mb-10">
         {t("projects.title")}
       </h2>
