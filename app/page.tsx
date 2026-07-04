@@ -1,4 +1,5 @@
 import Hero from "@/components/Hero";
+import Highlights from "@/components/Highlights";
 import About from "@/components/About";
 import Experience from "@/components/Experience";
 import FocusAreas from "@/components/FocusAreas";
@@ -10,6 +11,7 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <Highlights />
       <About />
       <Experience />
       <FocusAreas />

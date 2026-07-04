@@ -18,7 +18,7 @@ export const dictionary = {
       kicker: "About",
       title: "A bit about how I think",
       paragraph:
-        "As an AI Engineer, my day-to-day is about taming Generative AI models so they stop being toys and become real engines of operational efficiency. I've gone from optimizing LLMs in the telco industry to designing AI solutions that actually move the needle for the business. Outside office hours, my brain doesn't switch off: I use AI for what I enjoy most — Algorithmic Trading. If there's an inefficiency in the market, I want to automate capturing it. Lately I've been diving headfirst into DeFi, tokenization, and digital assets — not because it's trendy, but because the future of finance will be programmable, or it won't be at all.",
+        "I've spent the last few years turning Generative AI from a demo into something that actually moves business metrics — first in telco, now in banking-adjacent work. The three areas below are where that shows up day to day.",
       closing:
         "If you're looking for someone who knows the difference between a well-designed prompt and a waste of time — or if you want to debate why decentralized finance is going to break the traditional model — let's talk.",
     },
@@ -29,6 +29,8 @@ export const dictionary = {
       showMore: "Show earlier roles",
       showLess: "Show less",
       featuredNote: "Most relevant for financial services",
+      toggleChart: "View as timeline",
+      toggleList: "View as list",
     },
     focus: {
       kicker: "Focus Areas",
@@ -37,6 +39,7 @@ export const dictionary = {
     skills: {
       kicker: "Skills",
       title: "Tools I reach for",
+      chartTitle: "Skill focus by area",
       certsTitle: "Certifications",
     },
     projects: {
@@ -50,6 +53,7 @@ export const dictionary = {
       viewProfile: "View full GitHub profile",
       footnote:
         "Live data from the GitHub API — may be briefly unavailable if rate-limited.",
+      langChartTitle: "Language breakdown (live)",
     },
     education: {
       kicker: "Education",
@@ -80,7 +84,7 @@ export const dictionary = {
       kicker: "Sobre mí",
       title: "Un poco sobre cómo pienso",
       paragraph:
-        "Como AI Engineer, mi día a día consiste en domar modelos de IA Generativa para que dejen de ser juguetes y se conviertan en motores de eficiencia operativa. He pasado de optimizar LLMs en el sector telco a diseñar soluciones de IA que realmente mueven la aguja del negocio. Fuera del horario de oficina, mi cerebro no se apaga. Utilizo la IA para lo que más me divierte: el Algorithmic Trading. Si hay una ineficiencia en el mercado, quiero automatizar su captura. Últimamente, me he estado sumergiendo de cabeza en el ecosistema DeFi, tokenización y activos digitales; no porque sea una moda, sino porque el futuro de las finanzas será programable o no será.",
+        "En los últimos años he llevado la IA Generativa de ser una demo a algo que realmente mueve métricas de negocio — primero en telco, ahora en proyectos cercanos a la banca. Las tres áreas de abajo son donde eso se nota en el día a día.",
       closing:
         "Si buscas a alguien que sepa la diferencia entre un prompt bien diseñado y una pérdida de tiempo, o si quieres debatir sobre por qué las finanzas descentralizadas van a romper el modelo tradicional, hablemos.",
     },
@@ -91,6 +95,8 @@ export const dictionary = {
       showMore: "Ver roles anteriores",
       showLess: "Ver menos",
       featuredNote: "Lo más relevante para el sector financiero",
+      toggleChart: "Ver como timeline",
+      toggleList: "Ver como lista",
     },
     focus: {
       kicker: "Áreas de enfoque",
@@ -99,6 +105,7 @@ export const dictionary = {
     skills: {
       kicker: "Habilidades",
       title: "Herramientas que uso",
+      chartTitle: "Enfoque de habilidades por área",
       certsTitle: "Certificaciones",
     },
     projects: {
@@ -112,6 +119,7 @@ export const dictionary = {
       viewProfile: "Ver perfil completo de GitHub",
       footnote:
         "Datos en vivo desde la API de GitHub — puede no estar disponible brevemente por límite de solicitudes.",
+      langChartTitle: "Distribución por lenguaje (en vivo)",
     },
     education: {
       kicker: "Educación",

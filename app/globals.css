@@ -24,6 +24,23 @@
   --color-accent-orange: #f78c6c;
   --color-accent-pink: #ff5370;
 
+  /*
+   * Chart/data-viz categorical palette — validated separately from the
+   * text/UI accents above (node scripts/validate_palette.js, mode dark,
+   * surface #292d3e): deeper + more saturated so marks stay in the
+   * OKLCH L 0.48-0.67 / C >= 0.10 band instead of the paler UI accents,
+   * which are tuned for text legibility, not fill area. Order is fixed
+   * (CVD-safety) — worst adjacent pair clears deltaE 24. Never reorder.
+   */
+  --color-chart-purple: #9569e0;
+  --color-chart-orange: #d66a2e;
+  --color-chart-cyan: #1c93b3;
+  --color-chart-pink: #e0496f;
+  --color-chart-green: #5f9a33;
+  --color-chart-blue: #4c7fe6;
+  --color-chart-grid: #3b394c;
+  --color-chart-muted: #6b7094;
+
   --font-sans: var(--font-inter);
   --font-mono: var(--font-jetbrains-mono);
 }

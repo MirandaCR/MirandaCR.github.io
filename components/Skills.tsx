@@ -3,6 +3,7 @@
 import { useLanguage } from "@/context/LanguageContext";
 import { skillGroups, certifications } from "@/data/skills";
 import SectionTag from "@/components/SectionTag";
+import SkillsChart from "@/components/SkillsChart";
 
 const accentBorder: Record<string, string> = {
   green: "border-accent-green/40 text-accent-green",
@@ -20,6 +21,11 @@ export default function Skills() {
       <h2 className="text-2xl md:text-3xl font-semibold text-foreground-bright mb-10">
         {t("skills.title")}
       </h2>
+
+      <p className="font-mono text-xs uppercase tracking-widest text-foreground/50 mb-3">
+        {t("skills.chartTitle")}
+      </p>
+      <SkillsChart />
 
       <div className="space-y-8">
         {skillGroups.map((group) => (

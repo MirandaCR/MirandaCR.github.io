@@ -1,8 +1,15 @@
+export type ExperienceCategory = "ai" | "banking" | "data-bi";
+
 export interface ExperienceItem {
   id: string;
   company: string;
   role: string;
   location: string;
+  category: ExperienceCategory;
+  /** ISO "YYYY-MM" for timeline positioning. */
+  start: string;
+  /** ISO "YYYY-MM", or null for "present". */
+  end: string | null;
   period: { en: string; es: string };
   current?: boolean;
   featured?: boolean;
@@ -16,6 +23,9 @@ export const experience: ExperienceItem[] = [
     company: "TELUS Digital",
     role: "AI Engineer",
     location: "El Salvador",
+    category: "ai",
+    start: "2026-01",
+    end: null,
     period: { en: "Jan 2026 – Present", es: "Ene 2026 – Presente" },
     current: true,
     highlights: {
@@ -32,6 +42,9 @@ export const experience: ExperienceItem[] = [
     company: "Movistar Ecuador",
     role: "Artificial Intelligence (AI) Specialist",
     location: "Provincia Pichincha, Ecuador",
+    category: "ai",
+    start: "2024-09",
+    end: "2025-12",
     period: { en: "Sep 2024 – Dec 2025", es: "Sep 2024 – Dic 2025" },
     highlights: {
       en: [
@@ -51,6 +64,9 @@ export const experience: ExperienceItem[] = [
     company: "Banco Pichincha",
     role: "Senior Data Analyst – Strategy",
     location: "Quito, Pichincha, Ecuador",
+    category: "banking",
+    start: "2023-12",
+    end: "2024-08",
     period: { en: "Dec 2023 – Aug 2024", es: "Dic 2023 – Ago 2024" },
     featured: true,
     highlights: {
@@ -71,6 +87,9 @@ export const experience: ExperienceItem[] = [
     company: "TDW Group",
     role: "Data Engineer",
     location: "San Salvador, El Salvador",
+    category: "data-bi",
+    start: "2023-08",
+    end: "2023-12",
     period: { en: "Aug 2023 – Dec 2023", es: "Ago 2023 – Dic 2023" },
     highlights: { en: [], es: [] },
   },
@@ -79,6 +98,9 @@ export const experience: ExperienceItem[] = [
     company: "Corporación GPF (Grupo Fybeca)",
     role: "Coordinador de Business Intelligence",
     location: "Pichincha, Ecuador",
+    category: "data-bi",
+    start: "2022-07",
+    end: "2023-02",
     period: { en: "Jul 2022 – Feb 2023", es: "Jul 2022 – Feb 2023" },
     highlights: { en: [], es: [] },
     collapsedByDefault: true,
@@ -88,6 +110,9 @@ export const experience: ExperienceItem[] = [
     company: "Corporación GPF (Grupo Fybeca)",
     role: "Business Intelligence Analyst",
     location: "Pichincha, Ecuador",
+    category: "data-bi",
+    start: "2021-05",
+    end: "2022-07",
     period: { en: "May 2021 – Jul 2022", es: "May 2021 – Jul 2022" },
     highlights: { en: [], es: [] },
     collapsedByDefault: true,
@@ -97,6 +122,9 @@ export const experience: ExperienceItem[] = [
     company: "Rochi Consulting | Knowledge & Insights",
     role: "Data and Visualization Analyst Consultant",
     location: "San Salvador, El Salvador",
+    category: "data-bi",
+    start: "2021-05",
+    end: "2022-03",
     period: { en: "May 2021 – Mar 2022", es: "May 2021 – Mar 2022" },
     highlights: { en: [], es: [] },
     collapsedByDefault: true,
@@ -106,6 +134,9 @@ export const experience: ExperienceItem[] = [
     company: "Empresa Pública EPN-TECH E.P.",
     role: "Coordinador de proyecto",
     location: "Quito, Pichincha, Ecuador",
+    category: "data-bi",
+    start: "2019-12",
+    end: "2021-05",
     period: { en: "Dec 2019 – May 2021", es: "Dic 2019 – May 2021" },
     highlights: { en: [], es: [] },
     collapsedByDefault: true,
@@ -115,6 +146,9 @@ export const experience: ExperienceItem[] = [
     company: "PRODUBANCO – Grupo Promerica",
     role: "Intern",
     location: "Quito, Ecuador",
+    category: "banking",
+    start: "2018-11",
+    end: "2018-12",
     period: { en: "Nov 2018 – Dec 2018", es: "Nov 2018 – Dic 2018" },
     highlights: {
       en: ["Data analysis and processing."],
@@ -123,3 +157,21 @@ export const experience: ExperienceItem[] = [
     collapsedByDefault: true,
   },
 ];
+
+export const experienceCategoryMeta: Record<
+  ExperienceCategory,
+  { label: { en: string; es: string }; chartVar: string }
+> = {
+  ai: {
+    label: { en: "Applied AI / GenAI", es: "IA Aplicada / GenAI" },
+    chartVar: "var(--color-chart-purple)",
+  },
+  banking: {
+    label: { en: "Banking & Finance", es: "Banca y Finanzas" },
+    chartVar: "var(--color-chart-blue)",
+  },
+  "data-bi": {
+    label: { en: "Data, BI & Ops", es: "Datos, BI y Operaciones" },
+    chartVar: "var(--color-chart-green)",
+  },
+};

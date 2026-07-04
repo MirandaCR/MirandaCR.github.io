@@ -6,6 +6,7 @@ import { fetchGithubRepos, type GithubRepo } from "@/lib/github";
 import { siteConfig } from "@/data/siteConfig";
 import SectionTag from "@/components/SectionTag";
 import RepoCard from "@/components/RepoCard";
+import LanguageChart from "@/components/LanguageChart";
 
 type Status = "loading" | "error" | "success";
 
@@ -53,11 +54,14 @@ export default function GithubProjects() {
       )}
 
       {status === "success" && repos.length > 0 && (
-        <div className="grid gap-6 sm:grid-cols-2">
-          {repos.map((repo) => (
-            <RepoCard key={repo.id} repo={repo} />
-          ))}
-        </div>
+        <>
+          <LanguageChart repos={repos} />
+          <div className="grid gap-6 sm:grid-cols-2">
+            {repos.map((repo) => (
+              <RepoCard key={repo.id} repo={repo} />
+            ))}
+          </div>
+        </>
       )}
 
       <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2">
