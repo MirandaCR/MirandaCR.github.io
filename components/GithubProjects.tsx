@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import { fetchGithubRepos, type GithubRepo } from "@/lib/github";
 import { siteConfig } from "@/data/siteConfig";
+import { featuredRepos } from "@/data/featuredRepos";
 import SectionTag from "@/components/SectionTag";
 import RepoCard from "@/components/RepoCard";
 import LanguageChart from "@/components/LanguageChart";
@@ -11,8 +12,10 @@ import { GithubIcon } from "@/components/icons";
 
 type Status = "loading" | "error" | "success";
 
+const MAX_SHOWN = 6;
+
 export default function GithubProjects() {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const [status, setStatus] = useState<Status>("loading");
   const [repos, setRepos] = useState<GithubRepo[]>([]);
 
@@ -33,6 +36,15 @@ export default function GithubProjects() {
     };
   }, []);
 
+  const repoByName = new Map(repos.map((r) => [r.name.toLowerCase(), r]));
+  const curated = featuredRepos
+    .map((meta) => {
+      const repo = repoByName.get(meta.name.toLowerCase());
+      return repo ? { repo, meta } : null;
+    })
+    .filter((x): x is { repo: GithubRepo; meta: (typeof featuredRepos)[number] } => x !== null)
+    .slice(0, MAX_SHOWN);
+
   return (
     <section id="projects" className="max-w-4xl mx-auto px-6 py-16">
       <SectionTag icon={GithubIcon}>{t("projects.kicker")}</SectionTag>
@@ -50,16 +62,22 @@ export default function GithubProjects() {
         </p>
       )}
 
-      {status === "success" && repos.length === 0 && (
+      {status === "success" && curated.length === 0 && (
         <p className="text-sm text-foreground/60">{t("projects.empty")}</p>
       )}
 
-      {status === "success" && repos.length > 0 && (
+      {status === "success" && curated.length > 0 && (
         <>
-          <LanguageChart repos={repos} />
+          <LanguageChart repos={curated.map((c) => c.repo)} />
           <div className="grid gap-6 sm:grid-cols-2">
-            {repos.map((repo) => (
-              <RepoCard key={repo.id} repo={repo} />
+            {curated.map(({ repo, meta }) => (
+              <RepoCard
+                key={repo.id}
+                repo={repo}
+                description={meta.description[lang]}
+                tag={meta.tag}
+                lang={lang}
+              />
             ))}
           </div>
         </>

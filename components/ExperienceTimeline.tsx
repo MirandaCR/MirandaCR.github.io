@@ -5,13 +5,10 @@ import { useLanguage } from "@/context/LanguageContext";
 import {
   experience,
   experienceCategoryMeta,
+  countryFlagForLocation,
+  monthIndex,
   type ExperienceCategory,
 } from "@/data/experience";
-
-function monthIndex(iso: string): number {
-  const [y, m] = iso.split("-").map(Number);
-  return y * 12 + (m - 1);
-}
 
 export default function ExperienceTimeline() {
   const { lang } = useLanguage();
@@ -89,6 +86,7 @@ export default function ExperienceTimeline() {
                 className="w-32 sm:w-40 shrink-0 text-xs text-foreground/70 truncate"
                 title={item.company}
               >
+                <span aria-hidden>{countryFlagForLocation(item.location)}</span>{" "}
                 {item.company}
               </div>
               <div className="relative flex-1 h-6 rounded-full bg-chart-grid/40">
@@ -124,7 +122,8 @@ export default function ExperienceTimeline() {
                       {item.company}
                     </p>
                     <p className="text-[11px] text-foreground/70">
-                      {item.role} · {item.period[lang]}
+                      {item.role} · {item.period[lang]} ·{" "}
+                      {countryFlagForLocation(item.location)} {item.location}
                     </p>
                   </div>
                 )}

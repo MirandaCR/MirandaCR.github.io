@@ -9,15 +9,19 @@ export interface GithubRepo {
   fork: boolean;
 }
 
-const MAX_REPOS = 6;
+// Repos that are never "projects" to feature: the portfolio site itself and
+// the profile README repo.
+const EXCLUDED_REPOS = new Set(["mirandacr.github.io", "mirandacr"]);
 
 export async function fetchGithubRepos(username: string): Promise<GithubRepo[]> {
   const res = await fetch(
-    `https://api.github.com/users/${username}/repos?sort=updated&per_page=12`
+    `https://api.github.com/users/${username}/repos?sort=updated&per_page=30`
   );
   if (!res.ok) {
     throw new Error(`GitHub API error: ${res.status}`);
   }
   const repos: GithubRepo[] = await res.json();
-  return repos.filter((repo) => !repo.fork).slice(0, MAX_REPOS);
+  return repos.filter(
+    (repo) => !repo.fork && !EXCLUDED_REPOS.has(repo.name.toLowerCase())
+  );
 }

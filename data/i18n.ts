@@ -31,6 +31,7 @@ export const dictionary = {
       featuredNote: "Most relevant for financial services",
       toggleChart: "View as timeline",
       toggleList: "View as list",
+      breakdownTitle: "Time by focus area",
     },
     focus: {
       kicker: "Focus Areas",
@@ -42,6 +43,7 @@ export const dictionary = {
       chartTitle: "Skill focus by area",
       certsTitle: "Certifications",
       certsMoreLabel: "more on LinkedIn",
+      certsChartTitle: "Certifications per year",
     },
     projects: {
       kicker: "Projects",
@@ -98,6 +100,7 @@ export const dictionary = {
       featuredNote: "Lo más relevante para el sector financiero",
       toggleChart: "Ver como timeline",
       toggleList: "Ver como lista",
+      breakdownTitle: "Tiempo por área de enfoque",
     },
     focus: {
       kicker: "Áreas de enfoque",
@@ -109,6 +112,7 @@ export const dictionary = {
       chartTitle: "Enfoque de habilidades por área",
       certsTitle: "Certificaciones",
       certsMoreLabel: "más en LinkedIn",
+      certsChartTitle: "Certificaciones por año",
     },
     projects: {
       kicker: "Proyectos",

@@ -6,6 +6,7 @@ import { useLanguage } from "@/context/LanguageContext";
 import SectionTag from "@/components/SectionTag";
 import ExperienceTimeline from "@/components/ExperienceTimeline";
 import ExperienceList from "@/components/ExperienceList";
+import ExperienceCategoryBreakdown from "@/components/ExperienceCategoryBreakdown";
 
 export default function Experience() {
   const { t } = useLanguage();
@@ -27,6 +28,8 @@ export default function Experience() {
           {view === "chart" ? t("experience.toggleList") : t("experience.toggleChart")}
         </button>
       </div>
+
+      <ExperienceCategoryBreakdown />
 
       {view === "chart" ? <ExperienceTimeline /> : <ExperienceList />}
     </section>

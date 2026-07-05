@@ -27,6 +27,9 @@ export default function Education() {
               </div>
               <div>
                 <h3 className="font-semibold text-foreground-bright group-hover:text-accent-cyan transition-colors">
+                  <span aria-hidden className="mr-1.5">
+                    {item.countryFlag}
+                  </span>
                   {item.school}
                 </h3>
                 <p className="text-sm text-foreground/70">{item.degree[lang]}</p>

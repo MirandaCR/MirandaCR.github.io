@@ -60,6 +60,7 @@ export default function Hero() {
               priority
               sizes="(min-width: 768px) 224px, 192px"
               className="object-cover"
+              style={{ objectPosition: "center 15%" }}
             />
           </div>
         </div>

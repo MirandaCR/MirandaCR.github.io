@@ -143,6 +143,17 @@ export const experience: ExperienceItem[] = [
   },
 ];
 
+export function monthIndex(iso: string): number {
+  const [y, m] = iso.split("-").map(Number);
+  return y * 12 + (m - 1);
+}
+
+export function countryFlagForLocation(location: string): string {
+  if (location.includes("Ecuador")) return "🇪🇨";
+  if (location.includes("El Salvador")) return "🇸🇻";
+  return "";
+}
+
 export const experienceCategoryMeta: Record<
   ExperienceCategory,
   { label: { en: string; es: string }; chartVar: string }

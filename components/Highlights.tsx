@@ -1,13 +1,13 @@
 "use client";
 
-import { Calendar, Building2, GraduationCap, Landmark } from "lucide-react";
+import { Calendar, Globe, GraduationCap, Landmark } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import { highlights } from "@/data/highlights";
 import StatTile from "@/components/StatTile";
 
 const iconFor = {
   calendar: Calendar,
-  building: Building2,
+  globe: Globe,
   "graduation-cap": GraduationCap,
   landmark: Landmark,
 };

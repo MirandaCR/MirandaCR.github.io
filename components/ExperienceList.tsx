@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
-import { experience } from "@/data/experience";
+import { experience, countryFlagForLocation } from "@/data/experience";
 
 export default function ExperienceList() {
   const { t, lang } = useLanguage();
@@ -41,7 +41,8 @@ export default function ExperienceList() {
               {item.role}
             </p>
             <p className="font-mono text-xs text-foreground/50 mt-1">
-              {item.period[lang]} · {item.location}
+              {item.period[lang]} · {countryFlagForLocation(item.location)}{" "}
+              {item.location}
             </p>
             {item.highlights[lang].length > 0 && (
               <ul className="mt-3 space-y-1.5 text-sm text-foreground/80 list-disc list-outside pl-4">

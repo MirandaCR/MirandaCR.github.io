@@ -14,6 +14,7 @@ import { skillGroups } from "@/data/skills";
 import SectionTag from "@/components/SectionTag";
 import SkillsChart from "@/components/SkillsChart";
 import CertificationBadges from "@/components/CertificationBadges";
+import CertificationsTimeline from "@/components/CertificationsTimeline";
 
 const iconFor = {
   "brain-circuit": BrainCircuit,
@@ -79,6 +80,7 @@ export default function Skills() {
         <Award size={14} className="text-accent-purple" />
         {t("skills.certsTitle")}
       </p>
+      <CertificationsTimeline />
       <CertificationBadges />
     </section>
   );

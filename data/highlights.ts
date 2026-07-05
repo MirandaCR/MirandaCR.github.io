@@ -1,6 +1,6 @@
 export interface Highlight {
   value: string;
-  icon: "calendar" | "building" | "graduation-cap" | "landmark";
+  icon: "calendar" | "globe" | "graduation-cap" | "landmark";
   accent: "green" | "blue" | "purple" | "cyan";
   label: { en: string; es: string };
 }
@@ -19,12 +19,12 @@ export const highlights: Highlight[] = [
     },
   },
   {
-    value: "7",
-    icon: "building",
+    value: "🇸🇻 🇪🇨 🇨🇳",
+    icon: "globe",
     accent: "blue",
     label: {
-      en: "Companies across El Salvador & Ecuador",
-      es: "Empresas entre El Salvador y Ecuador",
+      en: "3 countries — lived, studied & worked across (7 companies)",
+      es: "3 países — viví, estudié y trabajé en (7 empresas)",
     },
   },
   {
