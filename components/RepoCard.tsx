@@ -1,4 +1,4 @@
-import { Brain, TrendingUp, Atom } from "lucide-react";
+import { Brain, TrendingUp, Atom, Map } from "lucide-react";
 import type { GithubRepo } from "@/lib/github";
 import type { FeaturedRepo } from "@/data/featuredRepos";
 
@@ -6,18 +6,21 @@ const tagIcon = {
   ai: Brain,
   trading: TrendingUp,
   quantum: Atom,
+  data: Map,
 };
 
 const tagStyle: Record<FeaturedRepo["tag"], string> = {
   ai: "bg-accent-green/10 text-accent-green",
   trading: "bg-accent-orange/10 text-accent-orange",
   quantum: "bg-accent-purple/10 text-accent-purple",
+  data: "bg-accent-blue/10 text-accent-blue",
 };
 
 const tagLabel: Record<FeaturedRepo["tag"], { en: string; es: string }> = {
   ai: { en: "AI", es: "IA" },
   trading: { en: "Trading", es: "Trading" },
   quantum: { en: "Quantum", es: "Quantum" },
+  data: { en: "Data", es: "Data" },
 };
 
 export default function RepoCard({
