@@ -71,13 +71,15 @@ export default function GithubProjects() {
           <LanguageChart repos={curated.map((c) => c.repo)} />
           <div className="grid gap-6 sm:grid-cols-2">
             {curated.map(({ repo, meta }) => (
-              <RepoCard
-                key={repo.id}
-                repo={repo}
-                description={meta.description[lang]}
-                tag={meta.tag}
-                lang={lang}
-              />
+              <div key={repo.id} className={meta.demoUrl ? "sm:col-span-2" : undefined}>
+                <RepoCard
+                  repo={repo}
+                  description={meta.description[lang]}
+                  tag={meta.tag}
+                  demoUrl={meta.demoUrl}
+                  lang={lang}
+                />
+              </div>
             ))}
           </div>
         </>

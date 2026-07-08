@@ -3,6 +3,8 @@ export interface FeaturedRepo {
   name: string;
   tag: "ai" | "trading" | "quantum" | "data";
   description: { en: string; es: string };
+  /** Live deployed demo/analysis, if any — shown as the primary link instead of just GitHub. */
+  demoUrl?: string;
 }
 
 // Curated allowlist — only repos relevant to AI, Trading, Quantum Computing
@@ -18,6 +20,7 @@ export const featuredRepos: FeaturedRepo[] = [
   {
     name: "el-salvador-sintetico",
     tag: "data",
+    demoUrl: "https://mirandacr.github.io/el-salvador-sintetico/",
     description: {
       en: "An interactive synthetic \"digital twin\" of El Salvador, built on NVIDIA's Nemotron-Personas dataset (148K AI-generated personas). Choropleth maps by department, econometric modeling (OLS, spatial autocorrelation), and a synthetic Human Capital Index — with an explicit section on what the data can and can't claim.",
       es: "Un \"gemelo digital\" sintético de El Salvador, construido sobre el dataset Nemotron-Personas de NVIDIA (148K personas generadas por IA). Mapas coropléticos por departamento, modelado econométrico (OLS, autocorrelación espacial) y un Índice de Capital Humano sintético — con una sección explícita sobre qué sí y qué no puede afirmar el dato.",
